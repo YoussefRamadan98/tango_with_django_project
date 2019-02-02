@@ -12,13 +12,17 @@ def index(request):
     # Place the list in our context_dict dictionary
     # that will be passed to the template engine.
     category_list = Category.objects.order_by('-likes')[:5]
-    page_list = Page.objects.order_by('views')[:5]
+    page_list = Page.objects.order_by('-views')[:5]
     context_dict = {'categories': category_list, 'pages': page_list}
     # Render the response and send it back!
     return render(request, 'rango/index.html', context_dict)
 
 def about(request):
-    return render (request, 'rango/about.html')
+    # prints out whether the method is a GET or a POST
+    print(request.method)
+    # prints out the user name, if no one is logged in it prints `AnonymousUser`
+    print(request.user)
+    return render (request, 'rango/about.html', {})
 
 def show_category(request, category_name_slug):
     # Create a context dictionary which we can pass
