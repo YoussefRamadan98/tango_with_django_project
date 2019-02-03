@@ -22,6 +22,7 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+LOGIN_URL = '/rango/login/'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'fzq@g$vg)!&gv_=t0q8r1c=cxa7bti%lh#l6xnr80@jr#(dh!d'
 
